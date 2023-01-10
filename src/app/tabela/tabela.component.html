@@ -1,0 +1,26 @@
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>
+      <img class="img-header" src="https://cdn-icons-png.flaticon.com/512/2182/2182952.png">
+    </th>
+    <th>PRODUTO</th>
+    <th>PREÇO</th>
+    <th>COMENTÁRIOS</th>
+  </tr>
+  <tr *ngFor="let produto of listarProdutoNaTabela">
+    <td>{{produto.id}}</td>
+    <td><img [src]="produto.url"></td>
+    <td>{{produto.name | uppercase}}</td>
+    <td>{{produto.price | currency:'BRL':true:'1.2-2'}}</td>
+    <td>
+      <div *ngFor="let evaluation of produto.evaluation">
+        <strong>{{evaluation.name}}</strong> <br>
+        <small>{{evaluation.comment}}</small>
+        <hr>
+      </div>
+    </td>
+  </tr>
+</table>
+<small *ngIf="quantidade"><i>Quantidade de produtos: {{quantidade}}</i></small>

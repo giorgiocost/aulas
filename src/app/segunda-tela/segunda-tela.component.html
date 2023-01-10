@@ -1,0 +1,37 @@
+<!-- <p>Formulário Produtos</p> -->
+
+<form [formGroup]="produtoForm" (ngSubmit)="onSubmit()">
+    <!-- campo nome -->
+    <label for="name">Nome do Produto</label>
+    <input
+        id="name"
+        formControlName="name"
+        placeholder="Nome do produto" 
+        cols="30" 
+        rows="10">
+
+    <br><br>
+    
+    <!-- campo imagem -->
+    <label for="imagem">URL Imagem</label>
+    <input
+        id="imagem"
+        formControlName="url"
+        placeholder="http://localhost/imagem.jpg" 
+        type="text"> 
+    <br><br>
+    
+    <!-- campo preço -->
+    <label for="preco">Preço</label>
+    <input 
+        id="preco"
+        formControlName="price"
+        placeholder="100"
+        type="text"> 
+    <br><br>
+
+
+    <button>Cadastrar</button>
+</form>
+
+
